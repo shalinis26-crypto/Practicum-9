@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UI Components for Animation</title>
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f4f8;
+overflow-x: hidden;
+}
+
+h1 {
+text-align: center;
+padding: 20px;
+color: #1e3a5f;
+}
+
+.slider-box {
+width: 100%;
+background-color: #1e3a5f;
+padding: 25px 0;
+overflow: hidden;
+white-space: nowrap;
+}
+
+.slide-text {
+display: inline-block;
+font-size: 32px;
+font-weight: bold;
+color: #ffffff;
+position: relative;
+animation-name: slideAcross;
+animation-duration: 8s;
+animation-timing-function: linear;
+animation-delay: 0s;
+animation-iteration-count: infinite;
+animation-direction: normal;
+animation-fill-mode: none;
+}
+
+@keyframes slideAcross {
+0% {
+transform: translateX(-100%);
+}
+100% {
+transform: translateX(100vw);
+}
+}
+
+.ui-section {
+display: flex;
+justify-content: center;
+gap: 40px;
+padding: 50px 20px;
+flex-wrap: wrap;
+}
+
+.anim-btn {
+padding: 14px 32px;
+font-size: 18px;
+color: #ffffff;
+background-color: #2e86de;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+animation: pulse 2s ease-in-out infinite;
+}
+
+.anim-btn:hover {
+background-color: #1b4f9c;
+}
+
+@keyframes pulse {
+0% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
+100% {
+transform: scale(1);
+}
+}
+
+.anim-card {
+width: 200px;
+padding: 25px;
+text-align: center;
+color: #ffffff;
+background-color: #e67e22;
+border-radius: 10px;
+animation: fadeUp 1.5s ease-out infinite;
+}
+
+@keyframes fadeUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.loader {
+width: 60px;
+height: 60px;
+border: 6px solid #cfd8dc;
+border-top: 6px solid #2e86de;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+from {
+transform: rotate(0deg);
+}
+to {
+transform: rotate(360deg);
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.slide-text,
+.anim-btn,
+.anim-card,
+.loader {
+animation: none;
+}
+}
+</style>
+</head>
+<body>
+
+<h1>UI Components for Animation</h1>
+
+<div class="slider-box">
+<span class="slide-text">Welcome to Animated UI Components</span>
+</div>
+
+<div class="ui-section">
+<button class="anim-btn">Click Me</button>
+<div class="anim-card">Animated Card</div>
+<div class="loader"></div>
+</div>
+
+</body>
+</html>
